@@ -83,13 +83,11 @@ button:hover {
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
 }
 
 .task-card .task-info {
-    flex-grow: 1;
+    margin-bottom: 10px;
 }
 
 .task-card .task-info h3 {
@@ -101,7 +99,8 @@ button:hover {
 }
 
 .task-card button {
-    margin-left: 10px;
+    margin: 5px 5px 0 5px;
+    width: calc(100% - 10px);
     background-color: #28a745;
 }
 
@@ -156,4 +155,15 @@ button:hover {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Animación para tarea vencida */
+@keyframes dueAnimation {
+    0% { background-color: #f8f9fa; }
+    50% { background-color: #ff6f61; }
+    100% { background-color: #f8f9fa; }
+}
+
+.task-card.due {
+    animation: dueAnimation 1s infinite;
 }
